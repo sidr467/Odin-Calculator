@@ -1,4 +1,18 @@
 let number1,number2,operator;
+let displayValue = "";
+const display = document.querySelector("#display");
+const buttons = document.querySelectorAll("button");
+
+function updateDisplay(number){
+    displayValue += number + " ";
+    display.value = displayValue;
+}
+
+buttons.forEach(button => {
+    button.addEventListener('click', () => {
+        updateDisplay(button.textContent);
+    })
+})
 
 function add(a,b){
     return a + b;
